@@ -1,21 +1,41 @@
 export interface VehiclePreferences {
+  brand: string;
   model: string;
+  minPrice: number;
   maxPrice: number;
   maxKm: number;
-  year?: number;
+  minYear?: number;
+  maxYear?: number;
   fuelType?: string;
   transmission?: string;
   bodyType?: string;
+  seats?: number;
+  usage?: string;
+  region: string;
   extraNotes?: string;
 }
 
-export interface MatchResult {
-  recommendation: string;
-  topPicks: VehiclePick[];
+export interface Listing {
+  id: string;
+  title: string;
+  price: string;
+  priceNum: number;
+  year?: number;
+  km?: string;
+  fuel?: string;
+  transmission?: string;
+  location?: string;
+  imageUrl?: string;
+  listingUrl: string;
+  source: string;
+  isBestBuy?: boolean;
+  aiScore?: number;
+  aiNote?: string;
 }
 
-export interface VehiclePick {
-  name: string;
-  reason: string;
-  estimatedPrice: string;
+export interface SearchResult {
+  recommendation: string;
+  make: string;
+  model: string;
+  listings: Listing[];
 }
